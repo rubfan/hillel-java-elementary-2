@@ -8,6 +8,11 @@ public class Calculator implements ICalculator{
     private Double result;
 
     @Override
+    public void sub(Float par1, Float par2) {
+        result = Double.valueOf(par1 - par2);
+    }
+
+    @Override
     public void add(Float par1, Float par2) {
         result = Double.valueOf(par1 + par2);
     }
