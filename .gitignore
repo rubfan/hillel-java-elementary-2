@@ -31,3 +31,8 @@ gradlew
 gradlew.bat
 out/
 target/
+
+.DS_Store
+.idea/
+*.iml
+*.class
