@@ -1,3 +1,3 @@
 # hillel-java-elementary
-Hillel school Java Elementary
+Hillel schoool Java Elementary
 You are welcome!!!
