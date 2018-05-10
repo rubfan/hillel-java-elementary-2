@@ -1,2 +1,2 @@
-# hillel-java-ee
-Hillel school Java EE
+# hillel-java-elementary
+Hillel school Java Elementary
