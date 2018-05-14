@@ -3,8 +3,8 @@ package SimpleCalc;
 public class SimpleCalc {
     public static void main (String[] args ){
 
-        int first= 15;
-        int second =12;
+        int first= 5;
+        int second =2;
         String plus = "addition";
         String minus = "subtraction";
         String multiply = "multiplication";
