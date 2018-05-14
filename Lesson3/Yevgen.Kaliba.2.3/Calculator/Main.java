@@ -13,22 +13,22 @@ public class Main {
         boolean ok2 = false;
         if (args.length >= 2) { //Проверяем, были ли переданы аргументы при вызове программы, и затем - корректность переменных;
             try {
-                   a = Double.parseDouble(args[1]);
-                   b = Double.parseDouble(args[2]);
-                   ok1 = true;
-                }
+                a = Double.parseDouble(args[1]);
+                b = Double.parseDouble(args[2]);
+                ok1 = true;
+            }
             catch (NumberFormatException e) {
-                  System.out.println("Аргументы, переданные из командной строки, неверны. Попробуйте ручной ввод.");
-                  ok1 = false;
-                }
+                System.out.println("Your arguments in command line were incorrect. Try manual input.");
+                ok1 = false;
+            }
         }
-        if (args.length == 0) {System.out.println("Аргументы при запуске не переданы, попробуйте ручной ввод.");}
+        if (args.length == 0) {System.out.println("No command line arguments found, try manual input.");}
         else if (args.length > 0 && Arrays.asList(Actions).contains(args[0])) { //Проверяем, соответсвует ли переданное действие предусмотренным
             ok2 = true;
-                } else  {
-            System.out.println("Действие, переданное из командной строки, задано неверно. Попробуйте ручной ввод.");
+        } else  {
+            System.out.println("Action in your command line is incorrect. Try manual input.");
             ok2 = false;
-                        }
+        }
 
         if (ok1 && ok2) {                       //Если с данными - аргументами все хорошо, то используем их
             a = Double.parseDouble(args[1]);
@@ -39,27 +39,27 @@ public class Main {
         else {  // Если переданных аргументов нет, вводим аргументы вручную
 
             while (true) {
-                System.out.println("Введите операцию:");
+                System.out.println("Enter type of operation:");
                 MyOper = MyKeyb.next();
                 if (Arrays.asList(Actions).contains(MyOper)) {   //Проверка на соответсвие допустимым командам
                     break;
                 }
                 else {
-                    System.out.println("Введена неверная операция. Используйте операцию из списка" + Arrays.asList(Actions));
+                    System.out.println("You entered incorrect operation. Use operation from list: " + Arrays.asList(Actions));
                 }
             }
-            System.out.println("Введите первое число:");
+            System.out.println("Input first number: ");
             a = MyKeyb.nextDouble();
-            System.out.println("Введите второе число:");
+            System.out.println("Input second number: ");
             b = MyKeyb.nextDouble();
         }
         // И собственно расчет и вывод значения
-        if (MyOper.equalsIgnoreCase("Addiction")) { System.out.println("Результат сложения: " + (a+b));}
-        else if (MyOper.equalsIgnoreCase("Subtraction")) { System.out.println("Результат вычитания: " + (a-b));}
-        else if (MyOper.equalsIgnoreCase("Multiplication")) { System.out.println("Результат умножения: " + (a*b));}
-        else if (MyOper.equalsIgnoreCase("Division")) { System.out.println("Результат деления: " + (a/b));}
-        else if (MyOper.equalsIgnoreCase("Remainder")) { System.out.println("Остаток от деления: " + (a%b));}
-        else if (MyOper.equalsIgnoreCase("Modulus")) { System.out.println("Модуль первого числа: " +Math.abs(a)+" Модуль второго числа: "+Math.abs(b) );}
+        if (MyOper.equalsIgnoreCase("Addiction")) { System.out.println("Result of addiction is: " + (a+b));}
+        else if (MyOper.equalsIgnoreCase("Subtraction")) { System.out.println("Result of subtraction is: " + (a-b));}
+        else if (MyOper.equalsIgnoreCase("Multiplication")) { System.out.println("Result of Multiplication is: " + (a*b));}
+        else if (MyOper.equalsIgnoreCase("Division")) { System.out.println("Result of Division is: " + (a/b));}
+        else if (MyOper.equalsIgnoreCase("Remainder")) { System.out.println("Remain from division is: " + (a%b));}
+        else if (MyOper.equalsIgnoreCase("Modulus")) { System.out.println("Modulus for a firs number is " +Math.abs(a)+" and modulus for second number is "+Math.abs(b)+"." );}
 
     }
 }
