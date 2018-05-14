@@ -3,10 +3,10 @@ import java.lang.String;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Введите сумму, которую необходимо заплатить: ");
+        System.out.println("Enter your paycheck sum: ");
         Scanner MyKeyb = new Scanner(System.in);
         double Paycheck = MyKeyb.nextDouble();
-        System.out.println("Оцените качество сервиса: ");
+        System.out.println("What do you think about service quality?: (terrible/poor/good/great/excellent");
         String Service = MyKeyb.next();
         int ServPerc;
     switch(Service) {
@@ -29,6 +29,6 @@ public class Main {
             ServPerc = 0;
             break;
        }
-    System.out.println("Вы должны оставить "+Paycheck/100*ServPerc +" тугриков чаевых");
+    System.out.println("You should leave "+Paycheck/100*ServPerc +" USD.");
     }
     }
