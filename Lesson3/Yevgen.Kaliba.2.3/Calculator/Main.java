@@ -11,7 +11,7 @@ public class Main {
         double a=0, b=0;
         boolean ok1 = false;
         boolean ok2 = false;
-        if (args.length >= 2) { //ѕровер€ем, были ли переданы аргументы при вызове программы, и затем - корректность переменных;
+        if (args.length >= 2) { //Checking, are recieved arguments correct; 
             try {
                 a = Double.parseDouble(args[1]);
                 b = Double.parseDouble(args[2]);
@@ -23,25 +23,25 @@ public class Main {
             }
         }
         if (args.length == 0) {System.out.println("No command line arguments found, try manual input.");}
-        else if (args.length > 0 && Arrays.asList(Actions).contains(args[0])) { //ѕровер€ем, соответсвует ли переданное действие предусмотренным
+        else if (args.length > 0 && Arrays.asList(Actions).contains(args[0])) { //Checking recieved from cl action for known;
             ok2 = true;
         } else  {
             System.out.println("Action in your command line is incorrect. Try manual input.");
             ok2 = false;
         }
 
-        if (ok1 && ok2) {                       //≈сли с данными - аргументами все хорошо, то используем их
+        if (ok1 && ok2) {                       //If arguments and action from cl are ok, we use them
             a = Double.parseDouble(args[1]);
             b = Double.parseDouble(args[2]);
             MyOper = args[0];
         }
 
-        else {  // ≈сли переданных аргументов нет, вводим аргументы вручную
+        else {  // If there are no arguments recieved, or they are incorrect, asking for manual input:
 
             while (true) {
                 System.out.println("Enter type of operation:");
                 MyOper = MyKeyb.next();
-                if (Arrays.asList(Actions).contains(MyOper)) {   //ѕроверка на соответсвие допустимым командам
+                if (Arrays.asList(Actions).contains(MyOper)) {   //Checking for know commands list
                     break;
                 }
                 else {
@@ -53,7 +53,7 @@ public class Main {
             System.out.println("Input second number: ");
             b = MyKeyb.nextDouble();
         }
-        // » собственно расчет и вывод значени€
+        // Totally, calculation and result output
         if (MyOper.equalsIgnoreCase("Addiction")) { System.out.println("Result of addiction is: " + (a+b));}
         else if (MyOper.equalsIgnoreCase("Subtraction")) { System.out.println("Result of subtraction is: " + (a-b));}
         else if (MyOper.equalsIgnoreCase("Multiplication")) { System.out.println("Result of Multiplication is: " + (a*b));}
