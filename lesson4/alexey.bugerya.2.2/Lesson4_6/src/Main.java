@@ -4,7 +4,6 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Main {
     private static int[] array;
-    private static int total;
     private final static int MIN_SIZE = 10;
     private final static int MAX_SIZE = 20;
     private final static int MIN_VALUE = 0;
@@ -27,10 +26,9 @@ public class Main {
         }
     }
 
-
     private static void findMaxAndPrint () {
         int max = MIN_VALUE;
-        for (int i = 0; i < array.length; i++) {
+        for (int i: array) {
             if (max < array[i]) {
                 max = array[i];
             }
