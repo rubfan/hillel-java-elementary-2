@@ -8,11 +8,8 @@ public class Tips {
     static int payment;
 
     public static void main(String[] args){
-        //System.out.println("Enter your bill: ");
         Scanner scan = new Scanner(System.in);
-        //bill = scan.nextInt();
         System.out.print("Enter service rank (terrible, poor, good, great or excellent): ");
-        //bill = scan.nextInt();
         serviceRank = scan.nextLine();
         System.out.print("Enter your bill: ");
         bill = scan.nextInt();
