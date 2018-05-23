@@ -1,4 +1,20 @@
 public class HomeWork {
+    public static void main(String[] args) {
+        System.out.println("найти минимальное " + findMin(1, 2, 3));
+        System.out.println("==============================");
+        System.out.println("найти максимальное " + findMax(1, 2, 3));
+        System.out.println("==============================");
+        System.out.print("рваспечатать минимальное ");
+        printMin(1, 2, 3);
+        System.out.println("==============================");
+        System.out.println("чётное нечётное " + EvOdNum(4));
+        System.out.println("==============================");
+        System.out.println("определить деление без остатка " + divisionWithoutResidue(4, 2));
+        System.out.println("==============================");
+        System.out.println("найти ближайшее к 10: " + findTheNearest(10, 2, -1));
+        System.out.println("==============================");
+        System.out.println("расчёт аренды " + rentPrice(10));
+    }
 
     public static int findMin(int a, int b, int c) {
         int[] arr = {a, b, c};
@@ -47,8 +63,8 @@ public class HomeWork {
         int discount = 0;
         if (amountOfDays > 5) discount = 20;
         if (amountOfDays > 7) discount = 50;
-        int totalPrice = pricePerDay * amountOfDays - discount;
-        return totalPrice;
+        return pricePerDay * amountOfDays - discount;
     }
+
 
 }
