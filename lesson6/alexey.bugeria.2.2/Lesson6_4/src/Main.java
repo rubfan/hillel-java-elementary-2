@@ -1,9 +1,11 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Main {
     private static int[] array;
+    private static int expectedSum;
     private final static int MIN_SIZE = 5;
     private final static int MAX_SIZE = 10;
     private final static int MIN_VALUE = 0;
@@ -13,8 +15,8 @@ public class Main {
         do {
             initArray(MIN_SIZE, MAX_SIZE, MIN_VALUE, MAX_VALUE);
             System.out.println("Your random array = " + Arrays.toString(array));
-            sortArray(array);
-            System.out.println("After sorting = " + Arrays.toString(array));
+            expectedSum = enterExpectedSum();
+            checkIfSum();
         } while (oneMore());
     }
 
@@ -26,20 +28,32 @@ public class Main {
         }
     }
 
-    private static void sortArray (int[] array) {
-        int temp;
-        int operations = 0;
-        for (int i = 0; i < array.length; i++) {
+    private static int enterExpectedSum (){
+        System.out.println("Enter some int:");
+        boolean entered = false;
+        int sum = 0;
+        do {
+            try {
+                Scanner input = new Scanner(System.in);
+                sum = input.nextInt();
+            } catch (Exception e) {
+                System.out.println("Wrong data entered. Try again typing some int");
+                continue;
+            }
+            entered = true;
+        } while (!entered);
+        return sum;
+    }
+
+    private static void checkIfSum () {
+        rootLoop: for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array.length; j++) {
-                if (array[i] > array[j]) {
-                    temp = array[i];
-                    array[i] = array[j];
-                    array[j] = temp;
-                    operations++;
+                if ((array[i] + array[j]) == expectedSum) {
+                    System.out.println(array[i] + " + " + array[j] + " = " + expectedSum);
+                    break rootLoop;
                 }
             }
         }
-        System.out.println("Sorting took " + operations + " steps");
     }
 
     private static boolean oneMore () {
