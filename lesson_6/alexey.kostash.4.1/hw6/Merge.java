@@ -1,6 +1,7 @@
 package hw6;
 
 public class Merge {
+	
     public static void merge(int arr1[], int arr2[]){
         int arr3[] = new int[arr1.length + arr2.length];
         int m = 0, n = 0;
@@ -14,7 +15,6 @@ public class Merge {
         for (int i = 0; i < arr3.length; i++) {
             System.out.print(arr3[i] + " ");
         }
-
     }
 
     public static void main(String[] args) {

@@ -29,16 +29,7 @@ public class Homework4 {
         }
     }
 
-    static void first20_1(){
-        int a = 1;
-        for(int i = 0; i < 20; i++){
-            System.out.println(a *= 2);
-        }
-    }
-
-    //or
-
-    static void first20_2(){
+    static void first20(){
         int a = 2;
         for(int i = 0; i < 20; i++){
             System.out.println(a << i);
@@ -83,6 +74,14 @@ public class Homework4 {
             for(int j = 0; j < 10; j++){
                 for(int k = 0; k < 10; k++){
                     sum = i + j + k;
+					//В следующих двух циклах определяются три цифры второго числа. 
+					//Сложные логические условия объясняются так:
+					//int m = sum - 18 > 0 ? sum - 18 : 0; означает что, если например сумма равна 24, то первая цифра не может быть меньше 6 (24 - 18),
+					//значит осуществлять перебор от 0 до 5 не имеет смысла
+					//часть (m < 10) && (m <= sum) означает, что цыфра неможет быть больше 9 и больше суммы, например если сумма = 4, то не имеет смысла перебирать 
+					//значения от 5 до 9.
+					//второй цикл действует аналогично первому
+					//Благодаря такому подходу количество итераций удалось уменьшить с 999999 до 55252 (это и есть количество счастливых билетиков)
                     for(int m = sum - 18 > 0 ? sum - 18 : 0; (m < 10) && (m <= sum); m++){
                         for(int n = sum - 9 - m > 0 ? sum - 9 - m : 0; (n < 10) && (n <= (sum - m)); n++){
                             a = sum - (m + n);
@@ -94,10 +93,6 @@ public class Homework4 {
         }
     }
 
-//	static void toBinary(int i){
-//		System.out.println(i + " in binary system is " + Integer.toBinaryString(i));
-//	}
-
     static void toBinary(int i){
         int[] nums = new int[32];
         int k = Math.abs(i);
@@ -105,9 +100,7 @@ public class Homework4 {
         for (int j = 0; j < nums.length; j++) {
             nums[j] = k % 2;
             k /= 2;
-//			System.out.print(nums[j]);
         }
-//		    System.out.println();
         if(i >= 0){
             while(nums[31 - iter++] == 0){}
             for (int j = nums.length - iter; j >= 0; j--) {
@@ -126,7 +119,6 @@ public class Homework4 {
             }
         }
         System.out.println();
-//		System.out.println(Integer.toBinaryString(i));
     }
 
     static void firstFiveMin(int [] arr){
@@ -146,16 +138,6 @@ public class Homework4 {
             i = j;
         }
         System.out.println(i);
-//            int j = 0;
-//            while (i > 0){
-//                j += i % 10;
-//                i /= 10;
-//            }
-//            if(j < 10){
-//                System.out.println(j);
-//            }else{
-//                toOneDigit(j);
-//            }
     }
 
     public static void main(String[] args) {
@@ -170,20 +152,22 @@ public class Homework4 {
         from90to0();
 
         System.out.println("4======= first 20 =======");
-        first20_1();
-        first20_2();
+        first20();
 
         System.out.println("5======= first N of array =======");
-        Homework4 hw4 = new Homework4();
+        
+		Homework4 hw4 = new Homework4();
         int num;
         Scanner scan = new Scanner(System.in);
-        for(int i = 0; i < hw4.arr.length; i++){
+        
+		for(int i = 0; i < hw4.arr.length; i++){
             hw4.arr[i] = (int)(Math.random()*10000);
         }
         for(int i = 0; i < hw4.arr.length; i++){
             System.out.println(hw4.arr[i]);
         }
-        System.out.print("Enter how many of the first array elements you whant to see: ");
+        
+		System.out.print("Enter how many of the first array elements you whant to see: ");
         hw4.n = scan.nextInt();
         scan.nextLine();
         hw4.firstValueOfArray();
@@ -198,7 +182,8 @@ public class Homework4 {
         luckyTicket();
 
         System.out.println("9======= toBinary =======");
-        System.out.print("Enter integer: ");
+        
+		System.out.print("Enter integer: ");
         num = scan.nextInt();
         scan.nextLine();
         System.out.print(num + " in binary system is: ");
@@ -208,11 +193,11 @@ public class Homework4 {
         firstFiveMin(hw4.arr);
 
         System.out.println("11======= Digit    =======");
-        System.out.print("Enter integer (must be bigger then zero): ");
+        
+		System.out.print("Enter integer (must be bigger then zero): ");
         num = scan.nextInt();
         scan.nextLine();
         scan.close();
         toOneDigit(num);
-
     }
 }

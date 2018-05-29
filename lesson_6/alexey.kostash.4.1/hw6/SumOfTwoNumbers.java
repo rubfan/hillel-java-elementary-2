@@ -6,7 +6,6 @@ public class SumOfTwoNumbers {
 
     public static void sumOfTwo(int arr[], int sum){
         int min = 0, max = arr.length - 1, maxLimit = sum - arr[min], index = max;
-        //Search index of max limit
         while (min < max){
             index = (min + max) / 2;
             if(arr[index] < maxLimit){

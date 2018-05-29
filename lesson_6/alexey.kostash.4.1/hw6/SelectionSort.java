@@ -22,10 +22,6 @@ public class SelectionSort {
                     index = j;
                 }
             }
-//            if(index != i){
-//                arr[index] = arr[i];
-//                arr[i] = min;
-//            }
             arr[index] = arr[i];
             arr[i] = min;
         }
