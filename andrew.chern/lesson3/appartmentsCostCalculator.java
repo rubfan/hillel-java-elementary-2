@@ -5,11 +5,11 @@ public class appartmentsCostCalculator {
 
         totalSum = days*cost;
 
-        if (days>5&&days<7){
+        if (days > 5 && days < 7){
             totalSum=totalSum-discountMoreFiveDays;
         }
 
-        if (days>7){
+        if (days > 7){
             totalSum=totalSum-discountMoreSevenDays;
         }
         System.out.println("Appartments cost for " + days + " is " + totalSum);
