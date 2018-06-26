@@ -1,6 +1,14 @@
+/**This class calculates Pascal Triangle
+ * @author artem.sharpilo
+ */
+
 import java.util.Scanner;
 
 public class pascalTriangle {
+    /**
+     * Main class. Takes array size from scanner and run program.
+     * @param args String
+     */
     public static void main(String[] args) {
         System.out.println("Enter array size: ");
         Scanner sc = new Scanner(System.in);
@@ -9,14 +17,25 @@ public class pascalTriangle {
         initArray(a);
 
     }
-    static int calcFactorial (int f){
+
+    /**
+     *
+     * @param f int
+     * @return factorial
+     */
+    public static int calcFactorial (int f){
         int result=1;
         for (int i=1; i<=f; i++){
             result*=i;
         }
         return result;
     }
-    static void initArray(int[][] a) {
+
+    /**
+     *
+     * @param a int[][]
+     */
+    public static void initArray(int[][] a) {
 
         int center=a.length/2;
         System.out.println(center);
