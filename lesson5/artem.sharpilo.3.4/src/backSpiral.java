@@ -1,6 +1,16 @@
+/**
+ * @author artem_sharpilo
+ * This class creates an array filled with  numbers from 1 to size of array in back-spiral form.
+ *
+ *
+ *
+ */
+
 public class backSpiral {
+
     public static void main(String[] args)
     {
+
         int size=10;
         int [][] a= new int [size][size];
         int count=1;

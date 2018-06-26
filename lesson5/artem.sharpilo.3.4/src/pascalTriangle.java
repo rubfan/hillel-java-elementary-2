@@ -1,22 +1,31 @@
+/**
+ * @author artem_sharpilo
+ */
+
 import java.util.Scanner;
 
 public class pascalTriangle {
-    public static void main(String[] args) {
-        System.out.println("Enter array size: ");
-        Scanner sc = new Scanner(System.in);
-        int size = sc.nextInt() + 1;
-        int[][] a = new int [size][size];
-        initArray(a);
 
-    }
-    static int calcFactorial (int f){
+
+    /**
+     calculation of calcFactorial
+      @param f int
+      @return int result
+     */
+     public int calcFactorial (int f){
         int result=1;
         for (int i=1; i<=f; i++){
             result*=i;
         }
         return result;
     }
-    static void initArray(int[][] a) {
+
+    /**
+     *  initialisation of array
+     * @param  a [int][int]
+     *
+     */
+     public void initArray(int[][] a) {
 
         int center=a.length/2;
         System.out.println(center);
@@ -34,6 +43,22 @@ public class pascalTriangle {
             }
             System.out.println();
         }
+
     }
+    /**
+     * main method, scans for array size and shows PascalTriangle
+     * @param args int
+     */
+    public static void main(String[] args) {
+        System.out.println("Enter array size: ");
+        Scanner sc = new Scanner(System.in);
+        int size = sc.nextInt() + 1;
+        int[][] a = new int [size][size];
+        pascalTriangle p = new pascalTriangle();
+        p.initArray(a);
+
+    }
+
 }
+
 
