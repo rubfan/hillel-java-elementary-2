@@ -1,3 +1,4 @@
+
 public class Task4 {
 
     public static void main(String[] args) {
@@ -9,7 +10,7 @@ public class Task4 {
     static boolean CheckArr(int[] a, int sum) {
         int res = 0;
 
-        for(int i = 0; i < a.length - 1; ++i) {
+        for (int i = 0; i < a.length - 1; ++i) {
             if (a[i] + a[i + 1] == sum) {
                 ++res;
             }

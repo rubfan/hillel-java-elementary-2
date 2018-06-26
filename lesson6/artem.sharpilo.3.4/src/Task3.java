@@ -1,3 +1,4 @@
+
 // Cложность этого алгоритма измеряется О(n^3)
 public class Task3 {
 
@@ -16,3 +17,4 @@ public class Task3 {
         System.out.println("The result is " + k);
     }
 }
+

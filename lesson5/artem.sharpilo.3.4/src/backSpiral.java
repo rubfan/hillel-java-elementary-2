@@ -1,14 +1,14 @@
 /**
+<<<<<<< HEAD
  * This class produces back-spiral two-dimensional array from 1 to the size of array.
  * @author artem.sharpilo
  */
 public class backSpiral {
-    /**
-     *
-     * @param args takes int size of array
-     */
+
+
     public static void main(String[] args)
     {
+
         int size=10;
         int [][] a= new int [size][size];
         int count=1;

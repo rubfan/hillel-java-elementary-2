@@ -1,3 +1,4 @@
+
 // сложность алгоритма сортировки О(n^2)
 import java.util.Scanner;
 
@@ -14,14 +15,14 @@ public class Task1 {
 
     public static void selectionSort(int[] a) {
         int i;
-        for(i = 0; i < a.length; ++i) {
-            a[i] = (int)(Math.random() * 1.0E8D + 1.0D);
+        for (i = 0; i < a.length; ++i) {
+            a[i] = (int) (Math.random() * 1.0E8D + 1.0D);
         }
 
-        for(i = 0; i < a.length - 1; ++i) {
+        for (i = 0; i < a.length - 1; ++i) {
             int min = i;
 
-            for(int j = 1; j < a.length; ++j) {
+            for (int j = 1; j < a.length; ++j) {
                 if (a[j] < a[min]) {
                     min = j;
                 }
